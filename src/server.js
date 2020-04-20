@@ -41,6 +41,7 @@ app.use((req, res, next) => {
 //routes
 app.use(require('./routes/index_routes'))
 app.use(require('./routes/place_routes'))
+app.use(require('./routes/collector_routes'))
 
 //Static files
 app.use(express.static(path.join(__dirname, 'public')))
