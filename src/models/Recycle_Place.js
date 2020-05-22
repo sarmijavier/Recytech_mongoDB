@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose')
+const { Schema, model } = require('mongoose')
 
 const Recycle_PlaceSchema = new Schema({
     place_name: {
@@ -16,9 +16,13 @@ const Recycle_PlaceSchema = new Schema({
     description: {
         type: String,
         required: true
+    },
+    user: {
+        type: String,
+        required: true,
     }
 }, {
-        timestamps: true
+    timestamps: true
 })
 
-module.exports = model('Recycle_Place',Recycle_PlaceSchema,'places')
+module.exports = model('Recycle_Place', Recycle_PlaceSchema, 'places')

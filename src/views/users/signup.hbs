@@ -7,25 +7,26 @@
             <div class="card-body">
                 <form action="/users/signup" method="POST">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="name" placeholder="Nombre">
+                        <input type="text" class="form-control" name="name" placeholder="Nombre" value="{{name}}">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="lastname" placeholder="lastname">
+                        <input type="text" class="form-control" name="lastname" placeholder="lastname" value="{{lastname}}">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="phone_number" placeholder="phone_number">
+                        <input type="number" class="form-control" name="id" placeholder="cedula" value="{{phone_number}}">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="email_address" placeholder="email_address">
+                        <input type="number" class="form-control" name="phone_number" placeholder="phone_number" value="{{phone_number}}">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="password" placeholder="password">
+                        <input type="email" class="form-control" name="email_address" placeholder="email_address" value="{{email_address}}">
                     </div>
-                    </div class="form-group">
-                        <p class="centrarEntrada"> <b>Tipo de usuario:</b></p>
-                        <p class="centrarEntrada">Generador<input type="radio" name="tipo" value="generator"></p>
-                        <p class="centrarEntrada">Reciclador<input type="radio" name="tipo" value="collector"></p>
-                    <div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="confirm_password" placeholder="confirm password">
+                    </div>
                     <button class="btn btn-primary btn-block">
                         signup
                     </button>

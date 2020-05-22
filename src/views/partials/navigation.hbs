@@ -15,25 +15,31 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
+            {{#if user}}
+                <li class="nav-item">
+                    <a href="/PlaceP" class="nav-link">Todos los puntos</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Puntos De Reciclaje
+                        Coloca Tú Punto De Reciclaje 
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/place">Todos los puntos</a>
+                        <a class="dropdown-item" href="/place">Ver mis puntos</a>
                         <a class="dropdown-item" href="/place/add">Agregar un nuevo sitio </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="/users/logout">Logout</a>
                     </div>
                 </li>
+
+            {{else}}
                 <li class="nav-item">
                     <a href="/users/signin" class="nav-link">Login</a>
                 </li>
                 <li class="nav-item">
                     <a href="/users/signup" class="nav-link">Register</a>
                 </li>
-
+            {{/if}}
             </ul>
         </div>
     </div>
