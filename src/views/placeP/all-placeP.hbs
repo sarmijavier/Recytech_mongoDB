@@ -1,13 +1,19 @@
-<div class="row">
+<div class="container">
+    <div class="row">  
     {{#each places}}
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <p>{{phone_number}}</p>
-                <p>{{description}}</p>
-                <p>{{address}}</p>                                
-            </div>
+      
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card" style="width: 20rem;">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fres.cloudinary.com%2Fteepublic%2Fimage%2Fprivate%2Fs--FpbP75ET--%2Ft_Preview%2Fb_rgb%3Affffff%2Cc_limit%2Cf_jpg%2Ch_630%2Cq_90%2Cw_630%2Fv1478243616%2Fproduction%2Fdesigns%2F770922_1.jpg&f=1&nofb=1" class="card-img-top" alt="">
+                <div class="card-body">
+                <h5 class="card-title">{{place_name}}</h5>
+                <p class="card-text">{{description}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+            </div> 
         </div>
-    </div>
     {{/each}}
+    </div> 
 </div>
