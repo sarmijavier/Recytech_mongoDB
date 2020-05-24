@@ -71,11 +71,14 @@ controllerCtrl.signin = passport.authenticate('login', {
 })
 
 
+
 controllerCtrl.logout = (req, res) => {
     req.logout()
     req.flash('success_msg', 'Gracias!, vuelve pronto')
     res.redirect('./signin')
 }
+
+
 
 
 

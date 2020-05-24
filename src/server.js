@@ -23,6 +23,8 @@ app.engine('hbs', exphbs({
 }))
 app.set('view engine', 'hbs')
 
+
+
 //middleswares peticiones cuando llega un usuario
 app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: false }))
@@ -55,6 +57,7 @@ app.use(require('./routes/placeP_routes'))
 
 //Static files
 app.use(express.static(path.join(__dirname, 'public')))
+
 
 
 
