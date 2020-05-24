@@ -7,7 +7,7 @@ helpers.isAuthenticated = (req, res, next) => {
     }
 
     req.flash('error_msg', 'Debes Iniciar Sesión!')
-    res.redirect('/users/signin')
+    res.redirect('/users/signup')
 }
 
 

@@ -16,9 +16,15 @@ placeCtrl.createNewPlace = async(req, res) => {
 }
 
 placeCtrl.renderPlace = async(req, res) => {
-    const places = await Place.find({ user: req.user._id }).lean()
 
-    res.render('./place/all-place', { places })
+    const places = await Place.find({ user: req.user._id }).lean()
+    if (places) {
+        res.render('./place/all-place', { places })
+
+    } else {
+        console.log('holA');
+
+    }
 }
 
 placeCtrl.renderEditForm = async(req, res) => {

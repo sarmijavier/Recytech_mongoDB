@@ -1,4 +1,5 @@
-const passport = require('passport')
+const passport = require('passport'),
+    GoogleStrategy = require('passport-google-oauth20').Strategy
 const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcryptjs')
 
@@ -27,6 +28,36 @@ passport.use('login', new LocalStrategy({
     }
 
 }))
+
+passport.use(
+    new GoogleStrategy({
+        clientID: '838198018326-it97c3ci4jjs96ks2be3nrr5f2q039md.apps.googleusercontent.com',
+        clientSecret: '4rZ8vOswPlVJFEumsE1q70Ty',
+        callbackURL: "http://localhost:4000/auth/google/redirect"
+    }, async(accessToken, refreshToken, profile, cb) => {
+        console.log(profile);
+
+        User.findOne({ id: profile.id }).then((currentUser) => {
+            if (currentUser) {
+                return cb(null, false, { message: 'El usuario ya existe' })
+            } else {
+                new User({
+                    id: profile.id,
+                    name: profile.name.givenName,
+                    lastname: profile.name.familyName,
+                    phone_number: profile.id,
+                    email_address: `${profile.name.givenName}@gmail.com`,
+                    password: profile.id
+                }).save().then((newUser) => {
+                    console.log(('nuevo usuario creado' + newUser));
+                    return cb(null, newUser)
+
+                })
+            }
+        })
+
+    })
+)
 
 
 passport.serializeUser((user, done) => {

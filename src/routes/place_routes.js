@@ -18,7 +18,7 @@ router.get('/place/add', isAuthenticated, renderPlaceForm)
 router.post('/place/new-place', isAuthenticated, createNewPlace)
 
 //Get all places
-router.get('/place', isAuthenticated, renderPlace)
+router.get('/place', renderPlace)
 
 //Edit place
 router.get('/place/edit/:id', isAuthenticated, renderEditForm)
