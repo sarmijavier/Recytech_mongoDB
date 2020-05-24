@@ -31,9 +31,7 @@ passport.use('login', new LocalStrategy({
 
 passport.use(
     new GoogleStrategy({
-        clientID: '838198018326-it97c3ci4jjs96ks2be3nrr5f2q039md.apps.googleusercontent.com',
-        clientSecret: '4rZ8vOswPlVJFEumsE1q70Ty',
-        callbackURL: "http://localhost:4000/auth/google/redirect"
+
     }, async(accessToken, refreshToken, profile, cb) => {
         console.log(profile);
 
