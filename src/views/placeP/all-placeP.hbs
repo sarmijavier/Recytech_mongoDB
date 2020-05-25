@@ -1,19 +1,30 @@
-<div class="container">
-    <div class="row">  
-    {{#each places}}
-      
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card" style="width: 20rem;">
-                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fres.cloudinary.com%2Fteepublic%2Fimage%2Fprivate%2Fs--FpbP75ET--%2Ft_Preview%2Fb_rgb%3Affffff%2Cc_limit%2Cf_jpg%2Ch_630%2Cq_90%2Cw_630%2Fv1478243616%2Fproduction%2Fdesigns%2F770922_1.jpg&f=1&nofb=1" class="card-img-top" alt="">
-                <div class="card-body">
-                <h5 class="card-title">{{place_name}}</h5>
-                <p class="card-text">{{description}}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div> 
+<section class="gallery-block cards-gallery">
+
+    <div class="container4">
+        <div class="heading">
+            <h2>PUNTO DE RECICLAJE</h2>
         </div>
-    {{/each}}
-    </div> 
-</div>
+        <div class="row">
+        {{#each places}}
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 transform-on-hover">
+                    <a class="lightbox" href=""><img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/eee80b91988227.5e43f0ccceda5.png" class="card-img-top"></a>
+                    <div class="card-body">
+                        <a href="/place/edit/{{_id}}"> 
+                        <h6>{{place_name}}</h6>
+                        <p class="text-muted card-text">{{description}}</p>
+                        <h6>{{phone_number}}  {{address}}</h6>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+        </div>
+    </div>
+</section>
+
+<script>
+    baguetteBox.run('.cards-gallery', {
+        animation: 'slideIn'
+    });
+</script>
