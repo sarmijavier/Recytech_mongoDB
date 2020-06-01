@@ -2,6 +2,7 @@ const passport = require('passport'),
     GoogleStrategy = require('passport-google-oauth20').Strategy
 const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcryptjs')
+const { CLIENT_ID_GOOGLE_AUTH, CLIENT_ID_GOOGLE_REGISTER, CLIENT_SECRET_GOOGLE_AUTH, CLIENT_SECRET_GOOGLE_REGISTER } = process.env
 
 const User = require('../models/User')
 
@@ -29,9 +30,11 @@ passport.use('login', new LocalStrategy({
 
 }))
 
-passport.use(
+passport.use('Register',
     new GoogleStrategy({
-
+        clientID: CLIENT_ID_GOOGLE_REGISTER,
+        clientSecret: CLIENT_SECRET_GOOGLE_REGISTER,
+        callbackURL: "http://localhost:4000/auth/google/redirect"
     }, async(accessToken, refreshToken, profile, cb) => {
         console.log(profile);
 
@@ -58,8 +61,8 @@ passport.use(
 )
 passport.use('auth',
     new GoogleStrategy({
-        clientID: '838198018326-it97c3ci4jjs96ks2be3nrr5f2q039md.apps.googleusercontent.com',
-        clientSecret: '4rZ8vOswPlVJFEumsE1q70Ty',
+        clientID: CLIENT_ID_GOOGLE_AUTH,
+        clientSecret: CLIENT_SECRET_GOOGLE_AUTH,
         callbackURL: "http://localhost:4000/auth/google2/redirect"
     }, async(accessToken, refreshToken, profile, cb) => {
         const user = await User.findOne({ id: profile.id })
