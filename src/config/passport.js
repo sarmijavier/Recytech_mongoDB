@@ -60,18 +60,10 @@ passport.use('Register',
     })
 )
 passport.use('auth',
-    new GoogleStrategy({ <<
-        <<
-        <<
-        < HEAD
+    new GoogleStrategy({
         clientID: CLIENT_ID_GOOGLE_AUTH,
         clientSecret: CLIENT_SECRET_GOOGLE_AUTH,
-        callbackURL: "http://localhost:4000/auth/google2/redirect" ===
-            ===
-            = >>>
-            >>>
-            >
-            f737c622cbe1b52c5e8011fa01ac83d65e7c04cc
+        callbackURL: "http://localhost:4000/auth/google2/redirect"
     }, async(accessToken, refreshToken, profile, cb) => {
         const user = await User.findOne({ id: profile.id })
         return cb(null, user)
