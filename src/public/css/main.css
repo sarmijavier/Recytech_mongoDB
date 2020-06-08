@@ -77,21 +77,21 @@ body {
     position: relative;
     height: 100%;
     width: 100%;
-    background: url('https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fres.cloudinary.com%2Fcivico%2Fimage%2Fupload%2Fc_fit%2Cf_auto%2Cfl_lossy%2Ch_1200%2Cq_auto%3Alow%2Cw_1200%2Fv1497234818%2Fentity%2Fimage%2Ffile%2Fcf8%2F002%2F593dfd820aa22c1e51002cf8.jpg&f=1&nofb=1');
     background-size: 100% 100%;
     background-position: center;
     background-attachment: fixed;
 }
 
 #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(2) {
-    background: url('https://images.pexels.com/photos/256937/pexels-photo-256937.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1548a073431893.5c0916c92f106.jpg');
     background-size: 100% 100%;
     background-position: center;
     background-attachment: fixed;
 }
 
 #carouselExampleIndicators .carousel-inner .carousel-item:nth-child(3) {
-    background: url('https://images.pexels.com/photos/1064162/pexels-photo-1064162.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c5b2c68918227.5c0037660a2ab.jpg');
     background-size: 100% 100%;
     background-position: center;
     background-attachment: fixed;
@@ -119,7 +119,7 @@ body {
 
 #carouselExampleIndicators .carousel-inner .carousel-item p {
     height: auto;
-    color: #ccc;
+    color: #fff;
     width: 100%;
     z-index: 1;
     text-align: center;
